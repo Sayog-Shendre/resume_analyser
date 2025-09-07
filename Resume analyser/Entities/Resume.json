@@ -1,0 +1,195 @@
+{
+    "name": "Resume",
+    "type": "object",
+    "properties": {
+        "filename": {
+            "type": "string",
+            "description": "Original filename of uploaded resume"
+        },
+        "file_url": {
+            "type": "string",
+            "description": "URL to the uploaded PDF file"
+        },
+        "contact_info": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "linkedin": {
+                    "type": "string"
+                },
+                "portfolio": {
+                    "type": "string"
+                }
+            }
+        },
+        "summary": {
+            "type": "string",
+            "description": "Professional summary or objective"
+        },
+        "work_experience": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "company": {
+                        "type": "string"
+                    },
+                    "position": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "responsibilities": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "education": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "institution": {
+                        "type": "string"
+                    },
+                    "degree": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "graduation_year": {
+                        "type": "string"
+                    },
+                    "gpa": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "skills": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "certifications": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "projects": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "technologies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "overall_rating": {
+            "type": "number",
+            "description": "Overall resume rating out of 10"
+        },
+        "category_ratings": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "number"
+                },
+                "format": {
+                    "type": "number"
+                },
+                "skills": {
+                    "type": "number"
+                },
+                "experience": {
+                    "type": "number"
+                }
+            }
+        },
+        "improvement_suggestions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "suggestion": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "type": "string",
+                        "enum": [
+                            "high",
+                            "medium",
+                            "low"
+                        ]
+                    }
+                }
+            }
+        },
+        "suggested_skills": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "skill": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "analysis_status": {
+            "type": "string",
+            "enum": [
+                "processing",
+                "completed",
+                "failed"
+            ],
+            "default": "processing"
+        }
+    },
+    "required": [
+        "filename",
+        "file_url"
+    ]
+}
